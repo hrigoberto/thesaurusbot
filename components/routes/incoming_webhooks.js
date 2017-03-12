@@ -14,6 +14,7 @@ module.exports = function(webserver, controller) {
         var bot = controller.spawn({});
 
         // Now, pass the webhook into be processed
+        // console.log('REQ BODY',req.body);
         controller.handleWebhookPayload(req, res, bot);
 
     });

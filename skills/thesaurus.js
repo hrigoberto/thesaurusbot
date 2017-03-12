@@ -27,9 +27,6 @@ module.exports = function(controller) {
         stats.convos++;
     });
 
-    controller.hears('optin', 'message_received', function(bot, message) {
-      controller.trigger('facebook_optin', [bot, message]);
-    })
 
     controller.hears(['^uptime','^debug'], 'message_received', function(bot, message) {
 

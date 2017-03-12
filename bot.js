@@ -17,6 +17,7 @@ This is a sample Facebook bot built with Botkit.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+require('dotenv').config();
 
 if (!process.env.page_token) {
     console.log('Error: Specify a Facebook page_token in environment.');
