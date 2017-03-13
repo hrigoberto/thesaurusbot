@@ -8,6 +8,7 @@ module.exports = function(webserver, controller) {
         // NOTE: we should enforce the token check here
 
         // respond to Slack that the webhook has been received.
+      console.log('req in bot', req)
         res.status(200);
         res.send('ok');
 

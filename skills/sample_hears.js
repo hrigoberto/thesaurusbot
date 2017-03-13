@@ -31,6 +31,9 @@ module.exports = function(controller) {
       controller.trigger('facebook_optin', [bot, message]);
     })
 
+    controller.hears('get started', 'message_received', function(bot, message) {
+      controller.trigger('facebook_optin', [bot, message]);
+    })
 
     controller.hears(['^say (.*)','^say'], 'message_received', function(bot, message) {
         if (message.match[1]) {
