@@ -18,7 +18,7 @@ module.exports = function(controller) {
             if(response.data[type]['syn'] !== null) {
               response.data[type]['syn'].map(function(syn) {
                 if(acc.indexOf(syn) < 0) {
-                  acc.push(syn)
+                  acc.push(`\n${syn}`)
                 }
               })
               // acc.push(response.data[type]['syn']) ;
@@ -27,10 +27,10 @@ module.exports = function(controller) {
             return acc;
           }, [])
 
-          console.log('Array of Synonyms', synArray);
           if (synArray.length > 9) {
-            return synArray.splice(0, 10);
+            synArray = synArray.slice(0, 20);
           }
+          console.log('Array of Synonyms', synArray);
           return bot.reply(message, synArray.join())
           // var synArray = wordtypes.map(function(wordtype) {
           //   if(wordtype['syn'] !== null){
@@ -51,6 +51,7 @@ module.exports = function(controller) {
       })
       .catch(function(err) {
         console.log('err in thesaurus', err);
+        return bot.reply(message, "I don't have synonyms for that")
       })
     });
 
